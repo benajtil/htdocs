@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="imgs/lakbay3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/label.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Single+Day&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Righteous&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        .carousel-item {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0;
+            background-color: transparent;
+        }
+
+        .carousel-item-next {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .carousel-item-prev {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .carousel-item.active {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+        .carousel-inner {
+            background-color: transparent;
+        }
+
+        .carousel-inner {
+            max-width: 100%;
+            /* Set the maximum width to prevent overflow */
+        }
+
+        .gallery {
+            max-width: 100%;
+            /* Set the maximum width to prevent overflow */
+            overflow: hidden;
+            /* Hide any content that overflows the container */
+        }
+
+        .travel-tips-section {
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsGVy1Od_kKcGmuX0b_IANAdIl1Oqw4jIOXFigN0dRbry9QVib0skrL5jQgDyYEPSBOa2esWtTQyTmAQKnhyQUgxa2mGpYnsQrIGqoGXzQFHfgNq8ynOzpB2IgKQtmAQXouFzYKoDOEy4/s1600/hikong+kmebel.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            /* Add this line */
+        }
+
+        .travel-tips-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Adjust the opacity value here */
+        }
+
+        .travel-tips-section h3,
+        .travel-tips-section p {
+            color: #fff;
+            filter: brightness(150%);
+            /* Set text color to white */
+        }
+
+        .traveltips.fadeIn {
+            opacity: 1;
+            /* Set opacity to 1 for fade-in effect */
+        }
+
+        .traveltips.fadeOut {
+            opacity: 0;
+            /* Set opacity to 0 for fade-out effect */
+        }
+
+        #fixedHr {
+            width: 100%;
+            max-width: 1390px;
+            height: 1px;
+            margin: 0 auto;
+            background-color: rgb(227, 236, 244);
+            border: none;
+        }
+
+        #fixedHr2 {
+            width: 100%;
+            max-width: 1390px;
+            height: 1px;
+            margin: 50px auto;
+            background-color: rgb(227, 236, 244);
+            border: none;
+        }
+
+        #fixedHr3 {
+            width: 100%;
+            max-width: 1390px;
+            height: 1px;
+            margin: 250px auto;
+            background-color: rgb(227, 236, 244);
+            border: none;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .fadeOut {
+            animation: fadeOut 0.5s ease forwards;
+        }
+        .container {
+            position: relative;
+        }
+        
+        
+        
+        .logo {
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+            cursor: pointer;
+            filter: grayscale(100%);
+        }
+        
+
+        .logo-container:hover .menu {
+            display: block;
+            transform: translateY(0); /* Slide down when hovering over the logo */
+        }
+        
+        .navigation {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .navigation li {
+            padding: 10px;
+        }
+        
+        .navigation li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        
+        .menu-toggle-icon:checked ~ .logo-container .menu-toggle-icon {
+            display: block;
+        }
+        .logo-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-toggle-icon {
+            display: none;
+        }
+
+        .menu-toggle-icon:checked ~ .menu {
+            display: block;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            z-index: 1;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a {
+            display: block;
+            padding: 5px 0;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #ddd;
+        }
+        
+
+    </style>
+
+    <title>E-tourism</title>
+
+</head>
+
+<body style="background-color: black;">
+    <header>
+        
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+            
+                <a class="navbar-brand" href="index.html">
+                    <img src="/imgs/logoLM.png" alt="Bootstrap" width="65" height="65">
+                </a>
+                
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                aria-current="page" href="destination.html">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                href="#">About Us</a>
+                        </li>
+                        <div class="logo-container">
+                            <label for="menuToggle" class="logo">
+                                <img src="/imgs/profile.png" alt="Logo" width="65" height="65">
+                            </label>
+                            <input type="checkbox" id="menuToggle" class="menu-toggle-icon">
+                            <div class="menu" id="menu">
+                                <a href="login.html" id="loginNavItem">Login</a>
+                                <a href="logout.php" id="logoutNavItem" style="display: none;">Logout</a>
+                                <a href="profile.php" id="profileNavItem" style="display: none;">User Profile</a>
+                            </div>
+                        </div>
+                        
+                    </ul>
+                    <form class="d-flex ms-auto" role="search">
+                        <input class="form-control me-2 custom-search-input" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" style="height: 30px;" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="fronthome" class="homepage">
+        <div style="display: flex; justify-content: center;">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
+                style="width: 100%; background-color: #3a3a3a;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active shadow">
+                        <img src="/imgs/tour1.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption" style="padding-bottom: 10%;">
+                            <h5
+                                style="text-align: center; font-family: Kanit, sans-serif; padding-bottom: 2%; font-size: 200%">
+                                <strong>Lakbay Marista Tourism </strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1"
+                                style="position: absolute; height: 50px; font-size: 16px; padding: 0 0px; top: 60%; left:50%; transform:translate(-50%, -50%); width:30%">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item shadow">
+                        <img src="/imgs/tour5.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption" style="padding-bottom: 10%;">
+                            <h5
+                                style="text-align: center; padding-bottom: 2%; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism </strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn2"
+                                style="position: absolute; height: 50px; font-size: 16px; padding: 0 0px; top: 60%; left:50%; transform:translate(-50%, -50%); width:30%">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item shadow">
+                        <img src="/imgs/tour2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption" style="padding-bottom: 10%;">
+                            <h5
+                                style="text-align: center; padding-bottom: 2%; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism </strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn3"
+                                style="position: absolute; height: 50px; font-size: 16px; padding: 0 0px; top: 60%; left:50%; transform:translate(-50%, -50%); width:30%">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item shadow">
+                        <img src="/imgs/tour4.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption" style="padding-bottom: 10%;">
+                            <h5
+                                style="text-align: center; font-family: Kanit, sans-serif; padding-bottom: 2%; font-size: 200%">
+                                <strong>Lakbay Marista Tourism </strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn4"
+                                style="position: absolute; height: 50px; font-size: 16px; padding: 0 0px; top: 60%; left:50%; transform:translate(-50%, -50%); width:30%">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item shadow">
+                        <img src="/imgs/tour6.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption" style="padding-bottom: 10%;">
+                            <h5
+                                style="text-align: center; font-family: Kanit, sans-serif; padding-bottom: 2%; font-size: 200%">
+                                <strong>Lakbay Marista Tourism </strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn5"
+                                style="position: absolute; height: 50px; font-size: 16px; padding: 0 0px; top: 60%; left:50%; transform:translate(-50%, -50%); width:30%">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <h1 class="Featured Destination"
+        style="text-align: center; padding-top: 5%; font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+        <strong>Featured Destinations</strong>
+    </h1>
+    <h2 class="Destination"
+        style="text-align: center; padding-top: 2%; font-size: 100%; font-family: 'Cabin', sans-serif; color: rgb(230, 236, 241) !important;">
+        <strong>Discover our hand-picked destinations for your next trip</strong>
+    </h2>
+
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <button type="button" style="height: 50px; font-size: 16px; padding: 0 0px; width: 10%;" class="btn btn-light"
+            id="exploreBtn4">View All</button>
+    </div>
+
+
+
+
+
+
+    <section class="gallery" style="padding-top: 96px">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <img src="/imgs/zip.jpg" class="gallery-item" alt="gallery">
+                    <div class="label"
+                        style="position: absolute; background-color: rgba(240, 231, 231, 0.7); color: #131212; border-radius: 5px;">
+                        Popular</div>
+                </div>
+                <div class="col">
+                    <img src="/imgs/divine.jpg" class="gallery-item" style="height: 83%;" alt="gallery">
+                    <div class="label"
+                        style="position: absolute; background-color: rgba(240, 231, 231, 0.7); color: #131212; border-radius: 5px;">
+                        Featured</div>
+                </div>
+                <div class="col">
+                    <img src="/imgs/holon.jpg" class="gallery-item" style="height: 83%;" alt="gallery">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr id="fixedHr">
+
+
+
+    <div class="container mt-5 travel-tips-section">
+        <div class="row justify-content-center">
+            <div class="traveltips">
+                <h3 class="col" style="font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+                    <strong>Travel Tips</strong>
+                </h3>
+                <p class="useful" style="font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+                    Useful Information and tips for your Travel
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+            <div class="col">
+                <div class="card card1">
+                    <h5 style="font-family: Kanit, sans-serif;">What to pack for a trip?</h5>
+                    <p style="height: 5%;"></p>
+                    <p style="color: rgb(247, 248, 249); font-family: Kanit, sans-serif;">Plan your packing wisely.
+                        Ensure you've got the basics covered - clothes, toiletries, and any must-have items for your
+                        journey.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card2">
+                    <h5>Destination Here</h5>
+                    <a href="lakeholonurl">
+                        <img src="" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card3">
+                    <h5>Destination Here</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card4">
+                    <h5>Destination Here</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="fixedHr2">
+
+    
+    <section class="customerreview">
+        <div class="container">
+            <div class="customer-reviews">
+                <h1 class="review-text" style="font-family: Kanit, sans-serif; color: rgb(213, 218, 222); padding-top:10%">Customer Reviews</h1>
+                <p style="color: #f9f7f7;">Read what our customers have to say about their travel experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr id="fixedHr3">
+
+
+
+    <div style="height: 600px;"></div>
+
+
+
+    <footer style="height: 100%;">
+
+    </footer>
+    <div id="reviews">
+
+    </div>
+
+    <?php include 'display_reviews.php'; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="button.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="animation.js"></script>
+    <script>
+        function checkLoggedIn() {
+            var isLoggedIn = sessionStorage.getItem('loggedIn');
+            return isLoggedIn === 'true';
+        }
+
+
+        function toggleLoginLogout() {
+            var loginNavItem = document.getElementById('loginNavItem');
+            var logoutNavItem = document.getElementById('logoutNavItem');
+
+            if (checkLoggedIn()) {
+                loginNavItem.style.display = 'none';
+                logoutNavItem.style.display = 'block';
+            } else {
+
+                loginNavItem.style.display = 'block';
+                logoutNavItem.style.display = 'none';
+            }
+        }
+
+
+        toggleLoginLogout();
+
+
+        function login() {
+
+            sessionStorage.setItem('loggedIn', 'true');
+
+
+            toggleLoginLogout();
+        }
+
+
+        function logout() {
+
+            sessionStorage.setItem('loggedIn', 'false');
+
+
+            toggleLoginLogout();
+        }
+    </script>
+    <script>
+        var menuCheckbox = document.getElementById("menuToggle");
+        var menu = document.getElementById("menu");
+        var logoContainer = document.querySelector(".logo-container");
+
+        logoContainer.addEventListener("click", function () {
+            menuCheckbox.checked = !menuCheckbox.checked;
+            menu.style.display = menuCheckbox.checked ? "block" : "none";
+        });
+
+
+        logoContainer.addEventListener("mouseenter", function () {
+            clearTimeout(window.menuTimeout);
+        });
+
+
+        logoContainer.addEventListener("mouseleave", function () {
+            window.menuTimeout = setTimeout(function () {
+                menuCheckbox.checked = false;
+                menu.style.display = "none";
+            }, 2000); 
+        });
+    </script>
+    <script>
+        var menuCheckbox = document.getElementById("menuToggle");
+        var menu = document.getElementById("menu");
+        var logoContainer = document.querySelector(".logo-container");
+        var loginNavItem = document.getElementById("loginNavItem");
+        var logoutNavItem = document.getElementById("logoutNavItem");
+        var profileNavItem = document.getElementById("profileNavItem");
+    
+        logoContainer.addEventListener("click", function () {
+            menuCheckbox.checked = !menuCheckbox.checked;
+            menu.style.display = menuCheckbox.checked ? "block" : "none";
+        });
+    
+        logoContainer.addEventListener("mouseenter", function () {
+            clearTimeout(window.menuTimeout);
+        });
+    
+
+        logoContainer.addEventListener("mouseleave", function () {
+            window.menuTimeout = setTimeout(function () {
+                menuCheckbox.checked = false;
+                menu.style.display = "none";
+            }, 2000); // Adjust the delay (in milliseconds) as needed
+        });
+    
+        // Add click event listener to logout
+        logoutNavItem.addEventListener("click", function () {
+            // Perform logout actions
+            isLoggedIn = false; // Assuming isLoggedIn is a global variable
+            toggleLoginLogout();
+        });
+    
+        // Simulate login/logout status and user profile visibility
+        var isLoggedIn = true; // Change to true or false based on actual login status
+        toggleLoginLogout();
+    
+        // Function to toggle login/logout items in the menu
+        function toggleLoginLogout() {
+            if (isLoggedIn) {
+                loginNavItem.style.display = "none";
+                logoutNavItem.style.display = "block";
+                profileNavItem.style.display = "block";
+            } else {
+                loginNavItem.style.display = "block";
+                logoutNavItem.style.display = "none";
+                profileNavItem.style.display = "none";
+            }
+        }
+    </script>
+    
+    
+</body>
+
+
+</html>

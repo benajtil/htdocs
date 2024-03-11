@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Lakbay Marista</title>
+
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/label.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Single+Day&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Righteous&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+</head>
+<body style="background-color: black;">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="/imgs/logoLM.png" alt="Bootstrap" width="65" height="65">
+                </a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                </ul>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                aria-current="page" href="destination.html">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 100%; font-family: 'Cabin', sans-serif;"
+                                href="#">About Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-auto" role="search">
+                        <input class="form-control me-2 custom-search-input" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" style="height: 30px;" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main">
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/LAKBAYMARISTA.png" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now</h2>
+                        <p>while seats are available!</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" action="register.php" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="username" class="required">Username</label>
+                                    <input type="text" name="username" id="username" />
+                                    <div id="error-username" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" name="password" id="password" />
+                                    <div id="error-password" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="confirm_password" class="required">Confirm Password</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" />
+                                    <div id="error-confirm-password" class="error-message"></div>
+                                </div>                                
+                                <div class="form-input">
+                                    <label for="firstname" class="required">First name</label>
+                                    <input type="text" name="firstname" id="firstname" />
+                                    <div id="error-firstname" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="middlename">Middle name</label>
+                                    <input type="text" name="middlename" id="middlename" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="lastname" class="required">Last name</label>
+                                    <input type="text" name="lastname" id="lastname" />
+                                    <div id="error-lastname" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                    <div id="error-email" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone_number" id="phone_number" />
+                                    <div id="error-phone" class="error-message"></div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="birthdate" class="required">Date of Birth</label>
+                                    <input type="date" name="birthdate" id="birthdate" />
+                                    <div id="error-birthdate" class="error-message"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="donate-us">
+                            <label>Donate us</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="button" id="submit" class="submit">Submit</button>
+                            <input type="reset" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="button.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(event){
+                // Prevent the default form submission behavior
+                event.preventDefault();
+                
+                var username = $("#username").val();
+                var password = $("#password").val();
+                var confirm_password = $("#confirm_password").val();
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                var email = $("#email").val();
+                var phone_number = $("#phone_number").val();
+                var birthdate = $("#birthdate").val();
+                
+                // Clear previous error messages
+                $(".error-message").text("");
+                
+                // Check for empty fields
+                if (username === "") {
+                    $("#error-username").text("Username is required");
+                    return;
+                }
+                if (password === "") {
+                    $("#error-password").text("Password is required");
+                    return;
+                }
+                if (confirm_password === "") {
+                    $("#error-confirm-password").text("Confirm Password is required");
+                    return;
+                }
+                if (firstname === "") {
+                    $("#error-firstname").text("First name is required");
+                    return;
+                }
+                if (lastname === "") {
+                    $("#error-lastname").text("Last name is required");
+                    return;
+                }
+                if (email === "") {
+                    $("#error-email").text("Email is required");
+                    return;
+                }
+                if (phone_number === "") {
+                    $("#error-phone").text("Phone number is required");
+                    return;
+                }
+                if (birthdate === "") {
+                    $("#error-birthdate").text("Date of Birth is required");
+                    return;
+                }
+                
+                // Check if birthdate makes user younger than 13 years old
+                var today = new Date();
+                var birthdateObj = new Date(birthdate);
+                var age = today.getFullYear() - birthdateObj.getFullYear();
+                var monthDiff = today.getMonth() - birthdateObj.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdateObj.getDate())) {
+                    age--;
+                }
+                if (age < 13) {
+                    $("#error-birthdate").text("You must be at least 13 years old to register");
+                    return;
+                }
+                
+                // Perform form submission
+                $.ajax({
+                    url: "register.php",
+                    method: "POST",
+                    data: {
+                        username: username,
+                        password: password,
+                        confirm_password: confirm_password,
+                        firstname: firstname,
+                        lastname: lastname,
+                        email: email,
+                        phone_number: phone_number,
+                        birthdate: birthdate
+                    },
+                    success: function(response){
+                        alert(response); // Display server response in alert
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>

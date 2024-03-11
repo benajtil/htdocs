@@ -1,0 +1,56 @@
+.card {
+    border-radius: 10px;
+    padding: 50px 30px;
+    margin: 10px 15px;
+    opacity: 0;
+    /* Initially set opacity to 0 */
+    transition: opacity 0.5s;
+    /* Remove background color */
+}
+
+
+
+.fadeIn {
+    opacity: 1;
+    /* Set opacity to 1 for fade-in effect */
+}
+
+.card.card1 {
+    height: 100%;
+    border: 2px solid rgb(234, 229, 229);
+    /* Add a white border */
+    background-color: transparent;
+}
+.card1 h5{
+    color: rgb(234, 238, 240);
+}
+
+.card.card2 {
+    height: 100%;
+    border: 2px solid rgb(234, 229, 229);
+    /* Add a white border */
+    background-color: transparent;
+}
+.card2 h5{
+    color: rgb(240, 242, 244);
+}
+
+.card.card3 {
+    height: 100%;
+    border: 2px solid rgb(234, 229, 229);
+    /* Add a white border */
+    background-color: transparent;
+}
+.card3 h5{
+    color: rgb(240, 242, 244);
+}
+
+.card.card4 {
+    height: 100%;
+    border: 2px solid rgb(234, 229, 229);
+    /* Add a white border */
+    background-color: transparent;
+}
+.card4 h5{
+    color: rgb(240, 242, 244);
+}
